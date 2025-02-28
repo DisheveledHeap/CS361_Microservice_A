@@ -7,7 +7,7 @@ app.use(cors());
 app.use(express.json());
 
 //server recieves post request
-app.post("/filter", async (req, res) => 
+app.post("/pieify", async (req, res) => 
     {
         // console.log("request recieved");
         // console.log("this is the request body:", req.body);

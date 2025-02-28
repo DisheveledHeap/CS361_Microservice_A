@@ -38,10 +38,10 @@ document.getElementById("submit").onclick = function() {
         vals.push(Number(element.value));
     }
 
-    console.log(vals);
-    console.log(types);
+    // console.log(vals);
+    // console.log(types);
 
-    fetch("http://localhost:3000/filter", {
+    fetch("http://localhost:3000/pieify", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"  // Ensure the server interprets the body as JSON
@@ -51,13 +51,6 @@ document.getElementById("submit").onclick = function() {
     .then(blob => {
         const imgUrl = URL.createObjectURL(blob); // Create URL from Blob
         let img = document.getElementById("resultImage");
-
-        if (!img) {
-            img = document.createElement("img");
-            img.id = "resultImage";
-            document.body.appendChild(img);
-        }
-
         img.src = imgUrl; // Set image source
     })
     .catch(error => console.error("Error:", error));
